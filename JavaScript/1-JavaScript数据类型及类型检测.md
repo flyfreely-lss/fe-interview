@@ -49,6 +49,6 @@ obj[s](123);
 
 **instanceof**
 
-`instanceof `主要用来检测引用数据类型。**实现原理就是检测关键字右边构造函数的 prototype 属性是否在左边实例对象的原型链上**。（对于原型链不清晰的可以参考上篇文章[JavaScript原型及原型链](./2-JavaScript原型及原型链)）
+`instanceof `主要用来检测引用数据类型。**实现原理就是检测关键字右边构造函数的 prototype 属性是否在左边实例对象的原型链上**。（对于原型链不清晰的可以参考上篇文章[JavaScript原型及原型链](./2-JavaScript原型及原型链.md)）
 
 所以 instanceof 也可能判断不准确，比如一个数组，他可以被 instanceof 判断为 Object。所以我们要想比较准确的判断对象实例的类型时，可以采取 `Object.prototype.toString.call` 方法。
