@@ -28,7 +28,8 @@
 }
 ```
 每个属性的作用可以看演示效果图：
-<video src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"></video>
+
+![absolute-margin](./images/absolute-margin.gif)
 
 
 
@@ -46,4 +47,5 @@
 }
 ```
 注意子元素 top/left 属性的50%是相对父元素宽高的 50%，而 transform 属性在x、y轴平移的 -50% 是子元素宽高的 50%，有点儿绕，下面演示图一看便知：
-<video src="./videos/absolute+transform.mov"></video>
+
+![absolute-transform](./images/absolute-transform.gif)
