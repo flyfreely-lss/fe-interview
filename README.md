@@ -7,12 +7,12 @@
 
 ##### JavaScript
 
-1. JavaScript数据类型及类型检测
-2. JavaScript原型及原型链
+1. [JavaScript数据类型及类型检测](./JavaScript/1-JavaScript数据类型及类型检测.md)
+2. [JavaScript原型及原型链](./JavaScript/2-JavaScript原型及原型链.md)
 
 ##### CSS
 
-1. CSS水平垂直居中
+1. [CSS水平垂直居中](./CSS/1-CSS水平垂直居中.md)
 
 #### 同步账号
 
