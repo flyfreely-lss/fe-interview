@@ -28,7 +28,7 @@
 }
 ```
 每个属性的作用可以看演示效果图：
-<video src="./videos/absolute+margin.mov"></video>
+<video src="./videos/absolute+margin.mp4"></video>
 
 
 
