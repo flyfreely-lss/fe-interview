@@ -63,4 +63,5 @@ obj[s](123);
    - 11 位表示指数，其中1个符号位
    - 52 位小数位
 
-   所以，一个number值可容纳的最大数值为 2^1024^ - 1，对应的十进制范围为：-2^53^ + 1（`Number.MIN_SAFE_INTEGER`） 到 2^53^ - 1（`Number.MAX_SAFE_INTEGER`，16位）
+     所以，一个number值可容纳的最大数值为 2^1024^ - 1（基于指数位得出），对应的十进制范围为：-2^53^ + 1（`Number.MIN_SAFE_INTEGER`） 到 2^53^ - 1（`Number.MAX_SAFE_INTEGER`，16位）
+   
