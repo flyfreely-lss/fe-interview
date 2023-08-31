@@ -52,3 +52,15 @@ obj[s](123);
 `instanceof `主要用来检测引用数据类型。**实现原理就是检测关键字右边构造函数的 prototype 属性是否在左边实例对象的原型链上**。（对于原型链不清晰的可以参考上篇文章[JavaScript原型及原型链](./2-JavaScript原型及原型链.md)）
 
 所以 instanceof 也可能判断不准确，比如一个数组，他可以被 instanceof 判断为 Object。所以我们要想比较准确的判断对象实例的类型时，可以采取 `Object.prototype.toString.call` 方法。
+
+### 关联面试题
+
+1. JavaScript中Number类型的范围是多少？
+
+   `Number` 类型是一个[双精度 64 位二进制格式 IEEE 754](https://zh.wikipedia.org/wiki/雙精度浮點數) 值，类似于 Java 中的 `double`。64位由3部分组成：
+
+   - 1 位符号，正数或负数
+   - 11 位表示指数，其中1个符号位
+   - 52 位小数位
+
+   所以，一个number值可容纳的最大数值为 2^1024^ - 1，对应的十进制范围为：-2^53^ + 1（`Number.MIN_SAFE_INTEGER`） 到 2^53^ - 1（`Number.MAX_SAFE_INTEGER`，16位）
