@@ -47,6 +47,8 @@ obj[s](123);
 
 `typeof` 主要用来检测基础数据类型，在上述表格中有体现。
 
+值得注意的是，`typeof null` 为 `object`。
+
 **instanceof**
 
 `instanceof `主要用来检测引用数据类型。**实现原理就是检测关键字右边构造函数的 prototype 属性是否在左边实例对象的原型链上**。（对于原型链不清晰的可以参考上篇文章[JavaScript原型及原型链](./2-JavaScript原型及原型链.md)）
