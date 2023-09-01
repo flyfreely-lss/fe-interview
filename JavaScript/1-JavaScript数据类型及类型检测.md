@@ -53,6 +53,27 @@ obj[s](123);
 
 所以 instanceof 也可能判断不准确，比如一个数组，他可以被 instanceof 判断为 Object。所以我们要想比较准确的判断对象实例的类型时，可以采取 `Object.prototype.toString.call` 方法。
 
+**Object.prototype.toString.call**
+
+该方法返回对象的类型字符串，因此可以用来判断一个值的类型。
+
+不同数据类型的`Object.prototype.toString`方法返回值如下:
+
+```javascript
+console.log(Object.prototype.toString.call(2)); > "[object Number]"
+console.log(Object.prototype.toString.call('str')); > "[object String]"
+console.log(Object.prototype.toString.call(true)); > "[object Boolean]"
+console.log(Object.prototype.toString.call(undefined)); > "[object Undefined]"
+console.log(Object.prototype.toString.call(null)); > "[object Null]"
+console.log(Object.prototype.toString.call([])); > "[object Array]"
+console.log(Object.prototype.toString.call(arguments)); > "[object Arguments]"
+console.log(Object.prototype.toString.call(function(){})); > "[object Function]"
+console.log(Object.prototype.toString.call(new Error())); > "[object Error]"
+console.log(Object.prototype.toString.call(new Date())); > "[object Date]"
+console.log(Object.prototype.toString.call(new RegExp())); > "[object RegExp]"
+其他对象：返回[object Object]。
+```
+
 ### 关联面试题
 
 1. JavaScript中Number类型的范围是多少？
@@ -64,4 +85,3 @@ obj[s](123);
    - 52 位小数位
 
      所以，一个number值可容纳的最大数值为 2^1024^ - 1（基于指数位得出），对应的十进制范围为：-2^53^ + 1（`Number.MIN_SAFE_INTEGER`） 到 2^53^ - 1（`Number.MAX_SAFE_INTEGER`，16位）
-   
