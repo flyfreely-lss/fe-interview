@@ -106,3 +106,31 @@ console.log(person.name) // Kevin
 最后是关于继承，前面我们讲到“每一个对象都会从原型‘继承’属性”，实际上，继承是一个十分具有迷惑性的说法，引用《你不知道的JavaScript》中的话，就是：
 
 继承意味着复制操作，然而 JavaScript 默认并不会复制对象的属性，相反，**JavaScript 只是在两个对象之间创建一个关联**，这样，一个对象就可以通过委托访问另一个对象的属性和函数，所以与其叫继承，委托的说法反而更准确些。
+
+### 关联面试题
+
+1. new的模拟实现
+
+   ```javascript
+   function objectFactory() {
+   
+       var obj = new Object(),
+   
+       Constructor = [].shift.call(arguments);
+   
+       obj.__proto__ = Constructor.prototype;
+   
+       var ret = Constructor.apply(obj, arguments);
+   
+       return typeof ret === 'object' ? ret : obj;
+   
+   };
+   ```
+
+   上述代码的步骤注解：
+
+   1. 用new Object() 的方式新建了一个对象 obj
+   2. 取出第一个参数，就是我们要传入的构造函数。此外因为 shift 会修改原数组，所以 arguments 会被去除第一个参数
+   3. 将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性
+   4. 使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性
+   5. 此处对构造函数有返回值的情况做了处理，如果有返回值，直接返回返回值，否则返回 obj。
