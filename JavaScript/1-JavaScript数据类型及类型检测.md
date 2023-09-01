@@ -83,7 +83,27 @@ console.log(Object.prototype.toString.call(new RegExp())); > "[object RegExp]"
    `Number` 类型是一个[双精度 64 位二进制格式 IEEE 754](https://zh.wikipedia.org/wiki/雙精度浮點數) 值，类似于 Java 中的 `double`。64位由3部分组成：
 
    - 1 位符号，正数或负数
+
    - 11 位表示指数，其中1个符号位
+
    - 52 位小数位
 
      所以，一个number值可容纳的最大数值为 2^1024^ - 1（基于指数位得出），对应的十进制范围为：-2^53^ + 1（`Number.MIN_SAFE_INTEGER`） 到 2^53^ - 1（`Number.MAX_SAFE_INTEGER`，16位）
+
+2. instanceof模拟实现
+
+   **实现原理就是检测关键字右边构造函数的 prototype 属性是否在左边实例对象的原型链上**。
+
+```javascript
+function myInstanceof (left, right) {
+  const prototype = right.prototype
+  let proto = Object.getPrototypeOf(left)
+
+  while(true){
+    if(!proto) return false
+    if(proto === prototype) return true
+    proto = Object.getPrototypeOf(proto)
+  }
+}
+```
+
